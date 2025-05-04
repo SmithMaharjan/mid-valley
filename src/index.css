@@ -1,1 +1,73 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
+/* @layer base {
+    * {
+        @apply box-border;
+    }
+} */
+
+
+@layer base {
+    html {
+        font-family: monospace;
+        /* @apply absolute inset-0 bg-gradient-to-r from-lime-400 to-lime-500; */
+    }
+}
+
+.container{
+    background-image: url("/public/img/background.jpg");
+    background-size: cover;
+}
+li {
+    list-style: none;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(-6px);
+    }
+    50% {
+        transform: translateY(3px);
+    }
+    100% {
+        transform: translateY(-6px);
+
+    }
+}
+
+.float {
+    animation: float 3.6s ease infinite;
+}
+
+/* Custom border with curve and point on the bottom-right */
+.border-custom {
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%; /* Curved effect */
+    background-color: white;
+    transform: rotate(45deg); /* Make it a point */
+    z-index: -1; /* Ensure it's behind the content */
+  }
+  
+  /* Create a triangle effect on the bottom-right corner */
+  .bg-orange-500 {
+    position: relative;
+  }
+  
+  .bg-orange-500::after {
+    content: "";
+    position: absolute;
+    bottom: -15px; /* Position the triangle */
+    right: -15px; /* Position the triangle */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-top: 15px solid white; /* Triangle color */
+    transform: rotate(45deg); /* Angle the triangle to create the point */
+    z-index: -1;
+  }
+  
